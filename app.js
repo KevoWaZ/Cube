@@ -30,6 +30,8 @@ arete.onchange = function () {
         diagFace.value = (Math.sqrt(2) * number).toFixed(3)
         diagCube.value = Math.sqrt(number * number + Math.pow(diagFace.value, 2)).toFixed(3)
 
+        resetEquation()
+        areteE()
         updateNumbers()
         dangerToLink()
     }
@@ -50,6 +52,8 @@ aire.onchange = function () {
         diagFace.value = (Math.sqrt(2) * arete.value).toFixed(3)
         diagCube.value = Math.sqrt(arete.value * arete.value + Math.pow(diagFace.value, 2)).toFixed(3)
 
+        resetEquation()
+        aireE()
         updateNumbers()
         dangerToLink()
     }
@@ -71,6 +75,8 @@ aireTotal.onchange = function () {
         diagFace.value = (Math.sqrt(2) * arete.value).toFixed(3)
         diagCube.value = Math.sqrt(arete.value * arete.value + Math.pow(diagFace.value, 2)).toFixed(3)
 
+        resetEquation()
+        aireTotalE()
         updateNumbers()
         dangerToLink()
     }
@@ -90,6 +96,8 @@ volume.onchange = function () {
         diagFace.value = (Math.sqrt(2) * arete.value).toFixed(3)
         diagCube.value = Math.sqrt(arete.value * arete.value + Math.pow(diagFace.value, 2)).toFixed(3)
 
+        resetEquation()
+        volumeE()
         updateNumbers()
         dangerToLink()
     }
@@ -109,6 +117,8 @@ diagFace.onchange = function () {
         volume.value = (aire.value * arete.value).toFixed(3)
         diagCube.value = Math.sqrt(arete.value * arete.value + Math.pow(diagFace.value, 2)).toFixed(3)
 
+        resetEquation()
+        diagFaceE()
         updateNumbers()
         dangerToLink()
     }
@@ -128,6 +138,8 @@ diagCube.onchange = function () {
         volume.value = (aire.value * arete.value).toFixed(3)
         diagFace.value = (Math.sqrt(2) * arete.value).toFixed(3)
 
+        resetEquation()
+        diagCubeE()
         updateNumbers()
         dangerToLink()
     }
@@ -142,6 +154,7 @@ btnReset.onclick = function () {
     diagCube.value = ""
     updateNumbers()
     dangerToLink()
+    resetEquation()
 }
 
 function updateNumbers() {
@@ -160,4 +173,9 @@ function dangerToLink() {
     volume.classList.replace("is-danger", "is-link")
     diagFace.classList.replace("is-danger", "is-link")
     diagCube.classList.replace("is-danger", "is-link")
+}
+
+function resetEquation() {
+    let ajout = document.querySelector('.equation')
+    ajout.innerHTML = ""
 }
